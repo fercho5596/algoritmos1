@@ -1,0 +1,34 @@
+#include "stdafx.h"
+#include "math.h"
+#include < iostream >
+#include "conio.h"
+using namespace std;
+float suma(float x, int N);
+int FAC(int a);
+
+void main()
+{ int Numero;
+float Base,S;
+cout<<"ingrese numero de terminos de la serie: \n";cin>>Numero;
+cout<<"ingrese base: \n"; cin>>Base;
+S=suma(Base,Numero);
+cout<<"la suma es :\n"<<S;
+getch();
+
+}
+int FAC(int a)
+{int b=1;
+for(int i=2;i<=a;i++)
+ b=b*i;
+return b;
+}
+float suma(float x,int N)
+{int sig;
+float s;
+s=0;
+sig=1;
+for(int i=1;i<=N;i++)
+{s=s+sig*pow(x,i)/FAC(i);
+sig=sig*(-1);
+}
+return s;
