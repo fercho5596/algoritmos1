@@ -1,0 +1,46 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+float salarios(float salariobruto);
+
+void main()
+{int n,salariominimo;
+float p,s,salariobruto,salarioneto;
+salariominimo=1400;
+s=0;
+do
+{	cout<<"digite el numero de empleados\n";
+cin>>n;
+if(n<=0)
+cout<<"el numero no es valido \n";
+}while(n<=0);
+for(int i=1;i<=n;i++)
+{do
+	{cout<<"digite salario:\n";
+     cin>>salariobruto;
+	}while(salariobruto<1400);
+	
+	 if(salariobruto>salariominimo*2)  
+	   salarioneto=salarios(salariobruto);
+else 
+	salarioneto=salariobruto;
+	cout<<"\nel salario neto es:\n"<<salarioneto;
+
+s=s+salarioneto;
+
+}
+p=s/n;
+cout<<"el prodemio es;\n"<<p;
+_getch();
+
+ }
+float salarios (float salariobruto)
+{ 
+	float x;
+x=salariobruto-(salariobruto*0.25);
+return x;
+}
