@@ -1,0 +1,38 @@
+//Autor:Luis Fernando Medina 
+PALINDROMO 
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include <string>
+using namespace std;
+string invertir(string a);
+
+void main()
+{int x;
+	string a,b;
+cout<<"Digite palabra a verificar";
+getline(cin,a);
+b=invertir(a);
+x=a.compare(b);
+if(x==0)
+cout<<" Si es palindromo";
+else 
+	cout<<"No es palindromo";
+
+_getch();
+}
+
+
+string invertir(string a)
+{char aux;
+	int i=0; int j=(a.length())-1;
+while(i<j)
+{aux=a.at(i);
+a.at(i)=a.at(j);
+a[j]=aux;
+i++;			
+j--;
+}
+return a;
+}
+
